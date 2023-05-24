@@ -10,7 +10,7 @@ use estudianteController\EstudianteController;
 $id = empty($_GET['id']) ? '' : $_GET['id'];
 $titulo = 'Registrar Estudiante';
 $urlAction = "accion_registro_estudiante.php";
-$usuario= new Estudiante();
+$estudiante= new Estudiante();
 if(!empty($id)) {
     $titulo = 'Modificar Estudiante';
     $urlAction = "accion_modificar_estudiante.php";

@@ -1,8 +1,8 @@
 <?php
 
-namespace usuario;
+namespace estudiante;
 
-class Usuario
+class Estudiante
 {
     private $id;
     private $nombre;

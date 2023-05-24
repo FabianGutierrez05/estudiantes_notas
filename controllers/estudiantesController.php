@@ -13,9 +13,9 @@ class EstudianteController extends BaseController
         $sql = 'insert into estudiantes ';
         $sql .= '(id,nombre,apellido) values ';
         $sql .= '(';
-        $sql .= $usuario->getId() . ',';
-        $sql .= '"' . $usuario->getName() . '",';
-        $sql .= '"' . $usuario->getUsername() . '",';
+        $sql .= $estudiante->getId() . ',';
+        $sql .= '"' . $estudiante->getNombre() . '",';
+        $sql .= '"' . $estudiante->getApellido() . '",';
         $sql .= ')';
         $conexiondb = new ConexionDbController();
         $resultadoSQL = $conexiondb->execSQL($sql);

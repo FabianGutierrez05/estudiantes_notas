@@ -4,11 +4,11 @@ require 'controllers/conexionDbController.php';
 require 'controllers/baseController.php';
 require 'controllers/estudiantesController.php';
 
-use usuarioController\UsuarioController;
+use estudianteController\EstudianteController;
 
-$usuarioController = new UsuarioController();
+$estudianteController = new EstudianteController();
 
-$usuarios = $usuarioController->read();
+$estudiantes = $estudianteController->read();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -20,26 +20,26 @@ $usuarios = $usuarioController->read();
 
 <body>
     <main>
-        <h1>Lista de usuarios</h1>
-        <a href="views/form_usuario.php">Registrar usuario</a>
+        <h1>Lista de estudiantes</h1>
+        <a href="views/form_estudiante.php">Registrar estudiante</a>
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>Codigo</th>
                     <th>Nombre</th>
                     <th>Usuario</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                foreach ($usuarios as $usuario) {
+                foreach ($estudiantes as $estudiante) {
                     echo '<tr>';
-                    echo '  <td>' . $usuario->getId() . '</td>';
-                    echo '  <td>' . $usuario->getName() . '</td>';
-                    echo '  <td>' . $usuario->getUsername() . '</td>';
+                    echo '  <td>' . $estudiante->getId() . '</td>';
+                    echo '  <td>' . $estudiante->getNombre() . '</td>';
+                    echo '  <td>' . $estudiante->getApellido() . '</td>';
                     echo '  <td>';
-                    echo '      <a href="views/form_usuario.php?id=' . $usuario->getId() . '">modificar</a>';
-                    echo '      <a href="views/accion_borrar_usuario.php?id=' . $usuario->getId() . '">borrar</a>';
+                    echo '      <a href="views/form_estudiante.php?id=' . $estudiante->getId() . '">modificar</a>';
+                    echo '      <a href="views/accion_borrar_estudiante.php?id=' . $estudiante->getId() . '">borrar</a>';
                     echo '  </td>';
                     echo '</tr>';
                 }
