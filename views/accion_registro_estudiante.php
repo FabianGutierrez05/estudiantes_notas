@@ -8,9 +8,9 @@ use estudiante\Estudiante;
 use estudianteController\EstudianteController;
 
 $estudiante = new Estudiante();
-$estudiante->setId($_POST['id']);
-$estudiante->setNombre($_POST['nombre']);
-$estudiante->setApellido($_POST['apellido']);
+$estudiante->setCodigo($_POST['codigo']);
+$estudiante->setNombre($_POST['nombres']);
+$estudiante->setApellido($_POST['apellidos']);
 
 $estudianteController = new EstudianteController();
 $resultado = $estudianteController->create($estudiante);

@@ -34,12 +34,12 @@ $estudiantes = $estudianteController->read();
                 <?php
                 foreach ($estudiantes as $estudiante) {
                     echo '<tr>';
-                    echo '  <td>' . $estudiante->getId() . '</td>';
+                    echo '  <td>' . $estudiante->getCodigo() . '</td>';
                     echo '  <td>' . $estudiante->getNombre() . '</td>';
                     echo '  <td>' . $estudiante->getApellido() . '</td>';
                     echo '  <td>';
-                    echo '      <a href="views/form_estudiante.php?id=' . $estudiante->getId() . '">modificar</a>';
-                    echo '      <a href="views/accion_borrar_estudiante.php?id=' . $estudiante->getId() . '">borrar</a>';
+                    echo '      <a href="views/form_estudiante.php?codigo=' . $estudiante->getCodigo() . '">modificar</a>';
+                    echo '      <a href="views/accion_borrar_estudiante.php?codigo=' . $estudiante->getCodigo() . '">borrar</a>';
                     echo '  </td>';
                     echo '</tr>';
                 }

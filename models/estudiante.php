@@ -4,34 +4,34 @@ namespace estudiante;
 
 class Estudiante
 {
-    private $id;
-    private $nombre;
-    private $apellido;
+    private $codigo;
+    private $nombres;
+    private $apellidos;
    
 
-    public function getId()
+    public function getCodigo()
     {
-        return $this->id;
+        return $this->codigo;
     }
-    public function setId($value)
+    public function setCodigo($value)
     {
-        $this->id = $value;
+        $this->codigo = $value;
     }
 //xd
     public function getNombre()
     {
-        return $this->nombre;
+        return $this->nombres;
     }
     public function setNombre($value)
     {
-        $this->nombre = $value;
+        $this->nombres = $value;
     }
     public function getApellido()
     {
-        return $this->apellido;
+        return $this->apellidos;
     }
     public function setApellido($value)
     {
-        $this->apellido = $value;
+        $this->apellidos = $value;
     }
 }

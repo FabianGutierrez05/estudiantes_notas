@@ -7,7 +7,7 @@ require '../controllers/estudiantesController.php';
 
 use estudiante\Estudiante;
 use estudianteController\EstudianteController;
-$id = empty($_GET['id']) ? '' : $_GET['id'];
+$id = empty($_GET['codigo']) ? '' : $_GET['codigo'];
 $titulo = 'Registrar Estudiante';
 $urlAction = "accion_registro_estudiante.php";
 $estudiante= new Estudiante();
@@ -31,17 +31,17 @@ if(!empty($id)) {
     <form action="<?php echo $urlAction;?>" method="post">
         <label>
             <span>Codigo:</span>
-            <input type="number" name="id" min="1" value="<?php echo $estudiante->getId()?>" required>
+            <input type="number" name="codigo" min="1" value="<?php echo $estudiante->getCodigo()?>" required>
         </label>
         <br>
         <label>
             <span>Nombre:</span>
-            <input type="text" name="name" value="<?php echo $estudiante->getNombre();?>" required>
+            <input type="text" name="nombres" value="<?php echo $estudiante->getNombre();?>" required>
         </label>
         <br>
         <label>
             <span>Apellido:</span>
-            <input type="text" name="username" value="<?php echo $estudiante->getApellido();?>" required>
+            <input type="text" name="apellidos" value="<?php echo $estudiante->getApellido();?>" required>
         </label>
         <button type="submit">Guardar</button>
     </form>

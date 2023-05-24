@@ -11,11 +11,11 @@ class EstudianteController extends BaseController
     function create($estudiante)
     {
         $sql = 'insert into estudiantes ';
-        $sql .= '(id,nombre,apellido) values ';
+        $sql .= '(codigo,nombres,apellidos) values ';
         $sql .= '(';
-        $sql .= $estudiante->getId() . ',';
+        $sql .= $estudiante->getCodigo() . ',';
         $sql .= '"' . $estudiante->getNombre() . '",';
-        $sql .= '"' . $estudiante->getApellido() . '",';
+        $sql .= '"' . $estudiante->getApellido() . '"';
         $sql .= ')';
         $conexiondb = new ConexionDbController();
         $resultadoSQL = $conexiondb->execSQL($sql);
@@ -25,8 +25,8 @@ class EstudianteController extends BaseController
 
     function createAct($actividades)
     {
-        $sql = 'insert into estudiantes ';
-        $sql .= '(id,nombre,apellido) values ';
+        $sql = 'insert into actividades ';
+        $sql .= '(codigo,nombre,apellido) values ';
         $sql .= '(';
         $sql .= $usuario->getId() . ',';
         $sql .= '"' . $usuario->getName() . '",';
@@ -44,10 +44,10 @@ class EstudianteController extends BaseController
         $resultadoSQL = $conexiondb->execSQL($sql);
         $estudiantes = [];
         while ($registro = $resultadoSQL->fetch_assoc()) {
-            $usuario = new Estudiante();
-            $usuario->setId($registro['id']);
-            $usuario->setName($registro['nombre']);
-            $usuario->setUsername($registro['apellido']);
+            $estudiante = new Estudiante();
+            $estudiante->setCodigo($registro['codigo']);
+            $estudiante->setNombre($registro['nombres']);
+            $estudiante->setApellido($registro['apellidos']);
             array_push($estudiantes, $estudiante);
         }
         $conexiondb->close();
