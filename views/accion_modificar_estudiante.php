@@ -8,16 +8,16 @@ use estudiante\Estudiante;
 use estudianteController\EstudianteController;
 
 $estudiante = new Estudiante();
-$estudiante->setId($_POST['id']);
-$estudiante->setNombre($_POST['nombre']);
-$estudiante->setApellido($_POST['apellido']);
+$estudiante->setCodigo($_POST['codigo']);
+$estudiante->setNombre($_POST['nombres']);
+$estudiante->setApellido($_POST['apellidos']);
 
 $estudianteController = new EstudianteController();
-$resultado = $estudianteController->update($estudiante->getId(), $estudiante);
+$resultado = $estudianteController->update($estudiante->getCodigo(), $estudiante);
 if ($resultado) {
-    echo '<h1>Usuarios modificado</h1>';
+    echo '<h1>Estudiante modificado</h1>';
 } else {
-    echo '<h1>No se pudo modificar el usuario</h1>';
+    echo '<h1>No se pudo modificar el estudiante</h1>';
 }
 ?>
 <br>
