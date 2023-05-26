@@ -9,18 +9,14 @@ use estudiante\Estudiante;
 use estudianteController\EstudianteController;
 use nota\Nota;
 
-$estudiante = new Estudiante();
 $notas = new Nota();
-$estudiante->setCodigo($_POST['codigo']);
-$estudiante->setNombre($_POST['nombres']);
-$estudiante->setApellido($_POST['apellidos']);
-$notas->setCodEstudiante($_POST['codigo']);
 $notas->setId($_POST['id']);
 $notas->setDescripcion($_POST['descripcion']);
 $notas->setNota($_POST['nota']);
 
+
 $estudianteController = new EstudianteController();
-$resultado = $estudianteController->create($estudiante, $notas);
+$resultado = $estudianteController->create($notas);
 if ($resultado) {
     echo '<h1>Usuarios registrado</h1>';
 } else {

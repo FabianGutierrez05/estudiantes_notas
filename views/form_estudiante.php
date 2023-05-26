@@ -4,8 +4,10 @@ require '../models/estudiante.php';
 require '../controllers/conexionDbController.php';
 require '../controllers/baseController.php';
 require '../controllers/estudiantesController.php';
+require '../models/notas.php';
 
 use estudiante\Estudiante;
+use nota\Nota;
 use estudianteController\EstudianteController;
 $id = empty($_GET['codigo']) ? '' : $_GET['codigo'];
 $titulo = 'Registrar Estudiante';
