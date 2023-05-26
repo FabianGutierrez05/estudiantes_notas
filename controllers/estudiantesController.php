@@ -89,4 +89,7 @@ class EstudianteController extends BaseController
     function updateNotas(){
         
     }
+    function deleteNotas(){
+        
+    }
 }
