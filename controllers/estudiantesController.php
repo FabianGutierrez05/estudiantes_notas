@@ -8,7 +8,7 @@ use estudiante\Estudiante;
 
 class EstudianteController extends BaseController
 {
-    function create($estudiante, $nota)
+    function create($estudiante)
     {
         $sql = 'insert into estudiantes ';
         $sql .= '(codigo,nombres,apellidos) values ';
@@ -17,42 +17,16 @@ class EstudianteController extends BaseController
         $sql .= '"' . $estudiante->getNombre() . '",';
         $sql .= '"' . $estudiante->getApellido() . '"';
         $sql .= ')';
-
-        $sql1 = 'insert into actividades ';
-        $sql1 .= '(id, descripcion, nota, codigoEstudiante) values ';
-        $sql1 .= '(';
-        $sql1 .= $nota->getId() . ',';
-        $sql1 .= $nota->getDescripcion() . ',';
-        $sql1 .= '"'.$nota->getNota() . '",';
-        $sql1 .= '"'.$estudiante->getCodigo() . '"';
-        $sql1 .=')';
-
         $conexiondb = new ConexionDbController();
         $resultadoSQL = $conexiondb->execSQL($sql);
-        $resultadoSQL1 = $conexiondb->execSQL($sql1);
         $conexiondb->close();
-        if($resultadoSQL && $resultadoSQL1){
+        if($resultadoSQL){
         return true;
         }else{
             return false;
         }
     }
-    function createNotas($nota)
-    {
-        $sqlN = 'insert into actividades ';
-        $sqlN .= '(id,descripcion,nota,codigoEstudiante) values ';
-        $sqlN .= '(';
-        $sqlN .= $nota->getId() . ',';
-        $sqlN .= '"' . $nota->getDescripcion() . '",';
-        $sqlN .= '"' . $nota->getNota() . '",';
-        $sqlN .= $estudiante->getCodigo();
-        $sqlN .= ');';
-        $sqlN .= ')';
-        $conexiondb = new ConexionDbController();
-        $resultadoSQLN = $conexiondb->execSQL($sql);
-        $conexiondb->close();
-        return $resultadoSQLN;
-    }
+    
     function read()
     {
         $sql = 'select * from estudiantes'; //traer datos
@@ -68,22 +42,6 @@ class EstudianteController extends BaseController
         }
         $conexiondb->close();
         return $estudiantes;
-    }
-    function readNotas()
-    {
-        $sql = 'select * from actividades'; //traer datos
-        $conexiondb = new ConexionDbController(); 
-        $resultadoSQL = $conexiondb->execSQL($sql);
-        $notas = [];
-        while ($registro = $resultadoSQL->fetch_assoc()) {
-            $nota = new Nota();
-            $nota->setId($registro['id']);
-            $nota->setDescripcion($registro['descripcion']);
-            $nota->setNota($registro['nota']);
-            array_push($notas, $nota);
-        }
-        $conexiondb->close();
-        return $notas;
     }
 
     function readRow($codigo)
@@ -121,5 +79,14 @@ class EstudianteController extends BaseController
         $resultadoSQL = $conexiondb->execSQL($sql);
         $conexiondb->close();
         return $resultadoSQL;
+    }
+    function createNotas(){
+
+    }
+    function readNotas(){
+
+    }
+    function updateNotas(){
+        
     }
 }
