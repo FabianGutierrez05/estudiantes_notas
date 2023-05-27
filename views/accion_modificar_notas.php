@@ -13,7 +13,7 @@ $nota->setDescripcion($_POST['descripcion']);
 $nota->setNota($_POST['nota']);
 
 $notasController = new NotasController();
-$resultado = $notasController->update($nota->getCodigo(), $nota);
+$resultado = $notasController->update($nota->getId(), $nota);
 if ($resultado) {
     echo '<h1>Nota modificada</h1>';
 } else {
@@ -21,4 +21,3 @@ if ($resultado) {
 }
 ?>
 <br>
-<a href="../index.php">Volver al inicio</a>

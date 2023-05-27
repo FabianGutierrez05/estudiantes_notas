@@ -40,11 +40,26 @@ class NotasController {
         $conexiondb->close();
         return $notas;
     }
+    function readRow($id)
+    {
+        $sql = 'select * from actividades';
+        $sql .= ' where id=' . $id;
+        $conexiondb = new ConexionDbController();
+        $resultadoSQL = $conexiondb->execSQL($sql);
+        $nota = new Nota();
+        while ($registro = $resultadoSQL->fetch_assoc()) {   
+            $nota->setId($registro['id']);
+            $nota->setDescripcion($registro['descripcion']);
+            $nota->setNota($registro['nota']);
+        }
+        $conexiondb->close();
+        return $nota;
+    }
     function update($id, $nota)
     {
             $sql = 'update actividades set ';
-            $sql .= 'descripcion= "' .$nota->getNota(). '"';
-            $sql .= 'nota= "'.$nota->getNota(). '';
+            $sql .= 'descripcion= "' .$nota->getDescripcion(). '",';
+            $sql .= 'nota= "' .$nota->getNota(). '"';
             $sql .= ' where id= ' . $id;
             $conexiondb = new ConexionDbController();
             $resultadoSQL = $conexiondb->execSQL($sql);

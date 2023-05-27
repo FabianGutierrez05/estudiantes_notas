@@ -47,7 +47,7 @@ $notas = $estudianteController->read($codigo);
                     echo '  <td>';
                     $sumNotas=$nota->getNota()+$sumNotas;
                     $prom= $sumNotas/$denom;
-                    echo '      <a href="views/accion_modificar_notas.php?id=' . $nota->getId() . '">modificar</a>';
+                    echo '      <a href="views/form_nota.php?id=' . $nota->getId() . '">modificar</a>';
                     echo '      <a href="views/form_estudiante.php?codigo=' . $nota->getCodEstudiante() . '"></a>';
                     echo '      <a href="views/accion_borrar_notas.php?id=' . $nota->getId() . '">borrar</a>';
                     echo '  </td>';
