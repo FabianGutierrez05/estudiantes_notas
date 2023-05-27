@@ -28,7 +28,7 @@ $notas = $estudianteController->read($codigo);
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Actividad</th>
+                    <th>Descripcion</th>
                     <th>Nota</th>
                 </tr>
             </thead>

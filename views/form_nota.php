@@ -43,7 +43,7 @@ if(!empty($id)) {
         <br>
         <label>
             <span>Nota:</span>
-            <input type="text" name="nota" value="<?php echo $nota->getNota();?>" required>
+            <input type="text" name="nota" value="<?php echo $nota->getNota();?>" min="0" max="50" required>
         </label>
         <label>
             <input type="hidden" name="codigo" value="<?php echo $codigo;?>" required>
