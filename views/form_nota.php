@@ -7,6 +7,7 @@ require '../controllers/notasController.php';
 
 use nota\Nota;
 use notasController\NotasController;
+$codigo = $_GET['codigo'];
 $id = empty($_GET['id']) ? '' : $_GET['id'];
 $titulo = 'Registrar Nota';
 $urlAction = "accion_registrar_notas.php";
@@ -41,7 +42,10 @@ if(!empty($id)) {
         <br>
         <label>
             <span>Nota:</span>
-            <input type="text" name="apellidos" value="<?php echo $nota->getNota();?>" required>
+            <input type="text" name="nota" value="<?php echo $nota->getNota();?>" required>
+        </label>
+        <label>
+            <input type="hidden" name="codigo" value="<?php echo $codigo;?>" required>
         </label>
         <button type="submit">Guardar</button>
     </form>

@@ -4,8 +4,8 @@ require '../controllers/conexionDbController.php';
 require '../controllers/baseController.php';
 require '../controllers/notasController.php';
 
-use estudiante\Estudiante;
-use estudianteController\EstudianteController;
+use notas\Notas;
+use notasController\NotasController;
 
 $estudiante = new Estudiante();
 $estudiante->setCodigo($_POST['codigo']);

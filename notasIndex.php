@@ -1,14 +1,16 @@
 <?php
-require 'models/estudiante.php';
+require 'models/notas.php';
 require 'controllers/conexionDbController.php';
 require 'controllers/baseController.php';
-require 'controllers/estudiantesController.php';
+require 'controllers/notasController.php';
 
-use estudianteController\EstudianteController;
+use nota\Nota;
+use notasController\NotasController;
+$codigo = $_GET['codigo'];
 
-$estudianteController = new EstudianteController();
+$estudianteController = new NotasController();
 
-$notas = $estudianteController->readNotas();
+$notas = $estudianteController->read();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -21,7 +23,7 @@ $notas = $estudianteController->readNotas();
 <body>
     <main>
         <h1>Lista de estudiantes</h1>
-        <a href="views/form_estudiante.php">Registrar estudiante</a>
+        <a href="views/form_nota.php?codigo=<?php echo $codigo; ?>">Registrar estudiante</a>
         <table>
             <thead>
                 <tr>
@@ -37,6 +39,7 @@ $notas = $estudianteController->readNotas();
                     echo '  <td>' . $nota->getId() . '</td>';
                     echo '  <td>' . $nota->getDescripcion() . '</td>';
                     echo '  <td>' . $nota->getNota() . '</td>';
+                    echo '  <td>' . $nota->getCodEstudiante(). '</td>';
                     echo '  <td>';
                     echo '      <a href="views/form_estudiante.php?codigo=' . $nota->getCodigo() . '">modificar</a>';
                     echo '      <a href="views/accion_borrar_estudiante.php?codigo=' . $estudiante->getCodigo() . '">borrar</a>';
