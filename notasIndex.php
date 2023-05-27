@@ -22,8 +22,8 @@ $notas = $estudianteController->read();
 
 <body>
     <main>
-        <h1>Lista de estudiantes</h1>
-        <a href="views/form_nota.php?codigo=<?php echo $codigo; ?>">Registrar estudiante</a>
+        <h1>Lista de notas</h1>
+        <a href="views/form_nota.php?codigo=<?php echo $codigo; ?>">Registrar Notas</a>
         <table>
             <thead>
                 <tr>
@@ -41,8 +41,8 @@ $notas = $estudianteController->read();
                     echo '  <td>' . $nota->getNota() . '</td>';
                     echo '  <td>' . $nota->getCodEstudiante(). '</td>';
                     echo '  <td>';
-                    echo '      <a href="views/form_estudiante.php?codigo=' . $nota->getCodigo() . '">modificar</a>';
-                    echo '      <a href="views/accion_borrar_estudiante.php?codigo=' . $estudiante->getCodigo() . '">borrar</a>';
+                    echo '      <a href="views/form_estudiante.php?codigo=' . $nota->getCodEstudiante() . '">modificar</a>';
+                    echo '      <a href="views/accion_borrar_notas.php?id=' . $nota->getId() . '">borrar</a>';
                     echo '  </td>';
                     echo '</tr>';
                 }
