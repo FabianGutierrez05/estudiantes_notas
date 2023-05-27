@@ -4,20 +4,20 @@ require '../controllers/conexionDbController.php';
 require '../controllers/baseController.php';
 require '../controllers/notasController.php';
 
-use notas\Notas;
+use nota\Nota;
 use notasController\NotasController;
 
-$estudiante = new Estudiante();
-$estudiante->setCodigo($_POST['codigo']);
-$estudiante->setNombre($_POST['nombres']);
-$estudiante->setApellido($_POST['apellidos']);
+$nota = new Nota();
+$nota->setId($_POST['id']);
+$nota->setDescripcion($_POST['descripcion']);
+$nota->setNota($_POST['nota']);
 
-$estudianteController = new EstudianteController();
-$resultado = $estudianteController->update($estudiante->getCodigo(), $estudiante);
+$notasController = new NotasController();
+$resultado = $notasController->update($nota->getCodigo(), $nota);
 if ($resultado) {
-    echo '<h1>Estudiante modificado</h1>';
+    echo '<h1>Nota modificada</h1>';
 } else {
-    echo '<h1>No se pudo modificar el estudiante</h1>';
+    echo '<h1>No se pudo modificar la nota</h1>';
 }
 ?>
 <br>

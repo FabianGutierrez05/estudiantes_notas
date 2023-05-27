@@ -34,21 +34,37 @@ $notas = $estudianteController->read($codigo);
             </thead>
             <tbody>
                 <?php
+                $prom=0;
+                $denom=0;
+                $sumNotas=0;
                 foreach ($notas as $nota) {
+                    $denom=1+$denom;
                     echo '<tr>';
                     echo '  <td>' . $nota->getId() . '</td>';
                     echo '  <td>' . $nota->getDescripcion() . '</td>';
                     echo '  <td>' . $nota->getNota() . '</td>';
                     echo '  <td>' . $nota->getCodEstudiante(). '</td>';
                     echo '  <td>';
-                    echo '      <a href="views/form_estudiante.php?codigo=' . $nota->getCodEstudiante() . '">modificar</a>';
+                    $sumNotas=$nota->getNota()+$sumNotas;
+                    $prom= $sumNotas/$denom;
+                    echo '      <a href="views/accion_modificar_notas.php?id=' . $nota->getId() . '">modificar</a>';
+                    echo '      <a href="views/form_estudiante.php?codigo=' . $nota->getCodEstudiante() . '"></a>';
                     echo '      <a href="views/accion_borrar_notas.php?id=' . $nota->getId() . '">borrar</a>';
                     echo '  </td>';
                     echo '</tr>';
                 }
                 ?>
             </tbody>
-        </table>
+        </table>]
+        <h3>
+            <?php 
+            if($prom>3)
+            {
+                echo '<h1 style="color: green">Aprobo</h1>';
+            } else
+            { echo '<h1 style="color: red">No aprobo</h1>';
+            };
+            ?>
     </main>
 </body>
 
