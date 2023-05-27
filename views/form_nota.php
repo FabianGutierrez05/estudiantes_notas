@@ -10,7 +10,7 @@ use notasController\NotasController;
 $codigo = $_GET['codigo'];
 $id = empty($_GET['id']) ? '' : $_GET['id'];
 $titulo = 'Registrar Nota';
-$urlAction = "accion_registrar_notas.php";
+$urlAction = "accion_registrar_notas.php?codigoEstudiante=". $nota->getCodEstudiante();
 $nota= new Nota();
 if(!empty($id)) {
     $titulo = 'Modificar Nota';

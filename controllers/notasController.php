@@ -4,9 +4,10 @@ namespace notasController;
 
 use basecontroller\baseController;
 use conexionDb\ConexionDbController;
+use estudiante\Estudiante;
 use nota\Nota;
 
-class NotasController extends BaseController {
+class NotasController {
     function create($nota)
     {
         $sql = 'insert into actividades ';
@@ -22,9 +23,9 @@ class NotasController extends BaseController {
         $conexiondb->close();
         return $resultadoSQL;
     } 
-    function read()
+    function read($codigo)
     {
-        $sql = 'select * from actividades'; //traer datos
+        $sql = 'select * from actividades where codigoEstudiante = '.$codigo; //traer datos
         $conexiondb = new ConexionDbController(); 
         $resultadoSQL = $conexiondb->execSQL($sql);
         $notas = [];

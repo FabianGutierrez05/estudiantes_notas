@@ -10,7 +10,7 @@ $codigo = $_GET['codigo'];
 
 $estudianteController = new NotasController();
 
-$notas = $estudianteController->read();
+$notas = $estudianteController->read($codigo);
 ?>
 <!DOCTYPE html>
 <html lang="es">
