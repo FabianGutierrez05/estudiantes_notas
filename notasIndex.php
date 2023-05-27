@@ -22,7 +22,7 @@ $notas = $estudianteController->read($codigo);
 
 <body>
     <main>
-        <h1>Lista de notas</h1>
+        <h1>Lista de notas del estudiante</h1>
         <a href="views/form_nota.php?codigo=<?php echo $codigo; ?>">Registrar Notas</a>
         <table>
             <thead>
