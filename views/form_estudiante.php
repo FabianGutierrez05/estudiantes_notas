@@ -12,12 +12,7 @@ $id = empty($_GET['codigo']) ? '' : $_GET['codigo'];
 $titulo = 'Registrar Estudiante';
 $urlAction = "accion_registro_estudiante.php";
 $estudiante= new Estudiante();
-if(!empty($id)) {
-    $titulo = 'Modificar Estudiante';
-    $urlAction = "accion_modificar_estudiante.php";
-    $estudianteController = new EstudianteController();
-    $estudiante=$estudianteController->readRow($id);
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="es">

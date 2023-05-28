@@ -18,6 +18,56 @@ $notas = $estudianteController->read($codigo);
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        a {
+            margin-right: 10px;
+        }
+
+        h3 {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        h1.green {
+            color: green;
+        }
+
+        h1.red {
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
@@ -55,14 +105,14 @@ $notas = $estudianteController->read($codigo);
                 }
                 ?>
             </tbody>
-        </table>]
+        </table>
         <h3>
             <?php 
-            if($prom>3)
+            if($prom>30)
             {
-                echo '<h1 style="color: green">Aprobo</h1>';
+                echo '<h1 style="color: green">Aprobo con promedio de:'.$prom.'</h1>';
             } else
-            { echo '<h1 style="color: red">No aprobo</h1>';
+            { echo '<h1 style="color: red">No aprobo con un promedio de:'.$prom.'</h1>';
             };
             ?>
     </main>

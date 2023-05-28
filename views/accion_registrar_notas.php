@@ -19,9 +19,9 @@ $notas->setCodEstudiante($_POST['codigo']);
 $estudianteController = new NotasController();
 $resultado = $estudianteController->create($notas);
 if ($resultado) {
-    echo '<h1>Usuarios registrado</h1>';
+    echo '<h1>Nota registrada</h1>';
 } else {
-    echo '<h1>No se pudo modificar el usuario</h1>';
+    echo '<h1>No se pudo modificar la nota</h1>';
 }
 ?>
 <br>
