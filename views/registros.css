@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(254, 125, 125);
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="number"],
+input[type="text"] {
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #ff5555;
+}
+
+button[type="submit"] {
+    padding: 8px 12px;
+    border-radius: 3px;
+    border: none;
+    background-color: #ffa21f;
+    color: #fff;
+    cursor: pointer;
+}

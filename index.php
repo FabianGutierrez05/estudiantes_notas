@@ -16,6 +16,46 @@ $estudiantes = $estudianteController->read();
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <style>
+    
+    body {
+    
+    margin: 0;
+    padding: 0;
+    background-color: rgb(254, 250, 250);
+}
+
+main {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th,
+td {
+    padding: 8px;
+    border: 1px solid;
+    text-align: left;
+
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+a {
+    margin-right: 10px;
+} </style>
+    
 </head>
 
 <body>

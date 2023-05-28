@@ -9,6 +9,7 @@ use estudiante\Estudiante;
 use estudianteController\EstudianteController;
 use nota\Nota;
 
+
 $estudiante = new Estudiante();
 $notas = new Nota();
 $estudiante->setCodigo($_POST['codigo']);
@@ -23,6 +24,7 @@ if ($resultado) {
 } else {
     echo '<h1>No se pudo modificar el usuario</h1>';
 }
+
 ?>
 <br>
 <a href="../index.php">Volver al inicio</a>

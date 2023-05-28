@@ -20,7 +20,7 @@ $notas = $estudianteController->read($codigo);
     <title>Document</title>
     <style>
         body {
-            font-family: Arial;
+       
             margin: 0;
             padding: 0;
         }
